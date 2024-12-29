@@ -11,7 +11,7 @@
 	<groupId>com.health</groupId>
 	<artifactId>healthconnection</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>healthconnection</name>
+	<name>health connection</name>
 	<description>Api para manejo de agendamiento y pagos de citas</description>
 	<url/>
 	<licenses>
