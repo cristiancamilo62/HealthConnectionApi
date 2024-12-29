@@ -68,7 +68,6 @@ public class PatientEntity {
 	@Column(name = "accountStatement")
 	private boolean accountStatement;
 
-	@ManyToOne
-    @JoinColumn(name = "role")
-    private RoleEntity role;
+    @Column(name = "role")
+    private String role;
 }
