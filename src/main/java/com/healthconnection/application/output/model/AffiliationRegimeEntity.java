@@ -1,28 +1,29 @@
-package com.healthconnection.application.output.entity;
+package com.healthconnection.application.output.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.util.UUID;
 
 @Entity
-@Table(name = "IdentificationType")
+@Table(name = "AffiliationRegime")
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class IdentificationTypeEntity {
+public final class AffiliationRegimeEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
-	@Column(name = "identification_type_id")
+	@Column(name = "id")
 	private UUID id;
 	
-	@Column(name = "code")
-	private String code;
+	@Column(name = "type")
+	private String type;
 	
-	@Column(name = "name")
-	private String name;
+	@Column(name = "serviceCoverages")
+	private String serviceCoverages;
 	
 }

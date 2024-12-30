@@ -3,10 +3,11 @@ package com.healthconnection.domain.eps;
 import com.healthconnection.shared.helper.ObjectHelper;
 import com.healthconnection.shared.helper.TextHelper;
 import com.healthconnection.shared.helper.UuidHelper;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
-
 import java.util.UUID;
 
+@Getter
 @Service
 public class EpsDomain {
 	
@@ -23,7 +24,6 @@ public class EpsDomain {
 	public EpsDomain(final UUID id, final String name) {
 		setId(id);
 		setName(name);
-		
 	}
 	
 	public static EpsDomain create(final UUID id, final String name) {
@@ -32,14 +32,6 @@ public class EpsDomain {
 	
 	public static  EpsDomain create() {
 		return new EpsDomain();
-	}
-
-	public final UUID getId() {
-		return id;
-	}
-
-	public final String getName() {
-		return name;
 	}
 
 	public final void setId(UUID id) {
