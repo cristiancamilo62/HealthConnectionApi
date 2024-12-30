@@ -1,4 +1,4 @@
-package com.healthconnection.application.output.entity;
+package com.healthconnection.application.output.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
