@@ -1,4 +1,4 @@
-package com.healthconnection.domain.identificationtype;
+package com.healthconnection.domain;
 
 import com.healthconnection.shared.helper.ObjectHelper;
 import com.healthconnection.shared.helper.TextHelper;
@@ -12,16 +12,18 @@ import java.util.UUID;
 public class IdentificationTypeDomain {
 	
 	private UUID id;
+
 	private String code;
+
 	private String name;
-	
+
 	public IdentificationTypeDomain() {
         setId(UuidHelper.DEFAULT_UUID);
         setCode(TextHelper.EMPTY);
         setName(TextHelper.EMPTY);
-        
+
 	}
-	
+
 	public IdentificationTypeDomain(final UUID id, final String code, final String name) {
     	setId(id);
     	setCode(code);
@@ -36,16 +38,19 @@ public class IdentificationTypeDomain {
         return new IdentificationTypeDomain();
     }
 
+    public final String getCode() {
+		return code;
+    }
+
     public void setId(UUID id) {
         this.id = ObjectHelper.getDefault(id, UuidHelper.DEFAULT_UUID);
     }
-	
+
     public final void setCode(String code) {
 		this.code = ObjectHelper.getDefault(code, TextHelper.EMPTY);
 	}
-    
+
     public void setName(final String name) {
         this.name = ObjectHelper.getDefault(name, TextHelper.EMPTY);
     }
-
 }
