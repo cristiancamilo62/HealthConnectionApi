@@ -1,4 +1,4 @@
-package com.healthconnection.domain.affiliationregime;
+package com.healthconnection.domain;
 
 import com.healthconnection.shared.helper.ObjectHelper;
 import com.healthconnection.shared.helper.TextHelper;
@@ -49,4 +49,7 @@ public class AffiliationRegimeDomain {
 	public final void setServiceCoverages(String serviceCoverages) {
 		this.serviceCoverages = ObjectHelper.getDefault(serviceCoverages, TextHelper.EMPTY);
 	}
+	
+	
+
 }

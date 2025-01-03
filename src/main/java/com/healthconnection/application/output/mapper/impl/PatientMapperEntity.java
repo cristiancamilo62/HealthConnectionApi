@@ -2,7 +2,7 @@ package com.healthconnection.application.output.mapper.impl;
 
 import com.healthconnection.application.output.mapper.MapperEntity;
 import com.healthconnection.application.output.model.PatientEntity;
-import com.healthconnection.domain.patient.PatientDomain;
+import com.healthconnection.domain.PatientDomain;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

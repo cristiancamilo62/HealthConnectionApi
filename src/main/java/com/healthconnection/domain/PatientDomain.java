@@ -1,14 +1,10 @@
-package com.healthconnection.domain.patient;
+package com.healthconnection.domain;
 
-import com.healthconnection.domain.affiliationregime.AffiliationRegimeDomain;
-import com.healthconnection.domain.eps.EpsDomain;
-import com.healthconnection.domain.identificationtype.IdentificationTypeDomain;
 import com.healthconnection.shared.helper.ObjectHelper;
 import com.healthconnection.shared.helper.TextHelper;
 import com.healthconnection.shared.helper.UuidHelper;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
-
 import java.util.UUID;
 
 @Getter
@@ -16,21 +12,37 @@ import java.util.UUID;
 public class PatientDomain {
 	
 	private UUID id;
+	
 	private String identification;
+
 	private String firstName;
+
 	private String middleName;
+
 	private String lastName;
+
 	private String middleLastName;
+
 	private String email;
+
 	private boolean confirmedEmail;
+	
 	private String phoneNumber;
+	
 	private boolean confirmedPhoneNumber;
+	
 	private String password;
+	
 	private String dateBirth;
+	
 	private IdentificationTypeDomain identificationType;
+
 	private AffiliationRegimeDomain affiliationRegime;
+
 	private EpsDomain eps;
+
 	private boolean accountStatement;
+	
 	private String role;
 	
 	
@@ -58,10 +70,10 @@ public class PatientDomain {
 
 
 	public PatientDomain(UUID id, String identification, String firstName, String middleName, String lastName,
-                         String middleLastName, String email, boolean confirmedEmail, String phoneNumber,
-                         boolean confirmedPhoneNumber, String password, String dateBirth,
-                         IdentificationTypeDomain identificationType, AffiliationRegimeDomain affiliationRegime, EpsDomain eps,
-                         boolean accountStatement, String role) {
+			String middleLastName, String email, boolean confirmedEmail, String phoneNumber,
+			boolean confirmedPhoneNumber, String password, String dateBirth,
+			IdentificationTypeDomain identificationType, AffiliationRegimeDomain affiliationRegime, EpsDomain eps,
+			boolean accountStatement, String role) {
 		setId(id);
 		setIdentification(identification);
 		setFirstName(firstName);
@@ -147,7 +159,7 @@ public class PatientDomain {
 	}
 
 	public final void setRole(String role) {
-		this.role = ObjectHelper.getDefault(TextHelper.applyTrim(role), role);
+		this.role = ObjectHelper.getDefault(TextHelper.applyTrim(role), TextHelper.EMPTY);
 	}
 	
 }

@@ -10,7 +10,7 @@ public class UseCaseHealthException extends HealthException {
 
 	@Serial
 	private static final long serialVersionUID = 1L;
-	private static final LocationException location = LocationException.DATA;
+	private static final LocationException location = LocationException.USECASE;
 	
 	public UseCaseHealthException(final String userMessage) {
 		super(userMessage, location);

@@ -2,7 +2,7 @@ package com.healthconnection.application.output.mapper.impl;
 
 import com.healthconnection.application.output.mapper.MapperEntity;
 import com.healthconnection.application.output.model.EpsEntity;
-import com.healthconnection.domain.eps.EpsDomain;
+import com.healthconnection.domain.EpsDomain;
 import org.mapstruct.Mapper;
 
 

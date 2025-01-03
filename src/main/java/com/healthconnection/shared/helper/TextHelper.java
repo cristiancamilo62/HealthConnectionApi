@@ -40,7 +40,7 @@ public final class TextHelper {
     }
 
     public static String concatenate(final String... strings) {
-        return Arrays.asList(ObjectHelper.getDefault(strings, new String[0])).stream().map(string -> string)
+        return Arrays.stream(ObjectHelper.getDefault(strings, new String[0])).map(string -> string)
                 .collect(Collectors.joining());
     }
     
