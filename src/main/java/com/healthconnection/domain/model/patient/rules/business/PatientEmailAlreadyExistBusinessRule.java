@@ -1,22 +1,22 @@
 package com.healthconnection.domain.model.patient.rules.business;
 
-import com.healthconnection.domain.ports.output.repository.PatientRepository;
+import com.healthconnection.domain.ports.output.PatientRepositoryPort;
 import com.healthconnection.domain.model.patient.exceptions.PatientEmailAlreadyExistException;
 import com.healthconnection.domain.model.ValidationRule;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class PatientEmailAlreadyExistBusinessRule implements ValidationRule<String> {
 
-	private final PatientRepository patientRepository;
+	private final PatientRepositoryPort patientRepositoryPort;
 
-	public PatientEmailAlreadyExistBusinessRule(PatientRepository patientRepository) {
-		this.patientRepository = patientRepository;
+	public PatientEmailAlreadyExistBusinessRule(PatientRepositoryPort patientRepository) {
+		this.patientRepositoryPort = patientRepository;
 	}
 
 	@Override
     public void validate(String email) {
-        if (patientRepository.existsByEmail(email)) {
+        if (patientRepositoryPort.existsByEmail(email)) {
             throw new PatientEmailAlreadyExistException();
         }
     }

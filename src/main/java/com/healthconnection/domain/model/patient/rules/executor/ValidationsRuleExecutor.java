@@ -6,7 +6,6 @@ import com.healthconnection.domain.model.patient.rules.business.PatientIdAlready
 import com.healthconnection.domain.model.patient.rules.business.PatientIdentificationAlreadyExistBusinessRule;
 import com.healthconnection.domain.model.patient.PatientDomain;
 import com.healthconnection.domain.model.patient.rules.validation.*;
-import com.healthconnection.domain.patient.rules.validation.*;
 import org.springframework.stereotype.Service;
 
 @Service

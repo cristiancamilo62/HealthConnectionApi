@@ -1,6 +1,6 @@
 package com.healthconnection.domain.model.patient.rules.business;
 
-import com.healthconnection.domain.ports.output.repository.PatientRepository;
+import com.healthconnection.domain.ports.output.PatientRepositoryPort;
 import com.healthconnection.domain.model.patient.exceptions.PatientIdentificationAlreadyExistException;
 import com.healthconnection.domain.model.ValidationRule;
 import org.springframework.stereotype.Service;
@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class PatientIdentificationAlreadyExistBusinessRule implements ValidationRule<String> {
 	
-	private final PatientRepository patientRepository;
+	private final PatientRepositoryPort patientRepositoryPort;
 	
-	public PatientIdentificationAlreadyExistBusinessRule(PatientRepository patientRepository) {
-		this.patientRepository = patientRepository;
+	public PatientIdentificationAlreadyExistBusinessRule(PatientRepositoryPort patientRepository) {
+		this.patientRepositoryPort = patientRepository;
 	}
 
 	@Override
 	public void validate(String identification) {
 
-        if (!patientRepository.findByIdentification(identification).isEmpty()) {
+        if (patientRepositoryPort.findByIdentification(identification).isPresent()) {
             throw new PatientIdentificationAlreadyExistException();
         }
 
