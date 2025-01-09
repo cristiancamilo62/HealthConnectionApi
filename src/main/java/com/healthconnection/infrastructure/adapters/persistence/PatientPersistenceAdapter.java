@@ -25,11 +25,11 @@ public class PatientPersistenceAdapter implements PatientRepositoryPort {
     private final PatientMapperEntity patientMapperEntity;
 
     @Override
-    public PatientDomain save(PatientDomain patient) {
+    public void save(PatientDomain patient) {
 
-        PatientEntity patientEntity = patientJpaRepository.save(patientMapperEntity.toEntity(patient));
+        PatientEntity patientEntity = patientMapperEntity.toEntity(patient);
 
-        return patientMapperEntity.toDomain(patientEntity);
+        patientJpaRepository.save(patientEntity);
     }
 
     @Override
@@ -49,13 +49,13 @@ public class PatientPersistenceAdapter implements PatientRepositoryPort {
 
         var patientEntity = patientMapperEntity.toEntity(patient);
 
-        if (!isUuidValid(patientEntity.getIdentificationType().getId())) {
+        if (isUuidValid(patientEntity.getIdentificationType().getId())) {
             patientEntity.setIdentificationType(null);
         }
-        if (!isUuidValid(patientEntity.getAffiliationRegime().getId())) {
+        if (isUuidValid(patientEntity.getAffiliationRegime().getId())) {
             patientEntity.setAffiliationRegime(null);
         }
-        if (!isUuidValid(patientEntity.getEps().getId())) {
+        if (isUuidValid(patientEntity.getEps().getId())) {
             patientEntity.setEps(null);
         }
 
@@ -70,7 +70,7 @@ public class PatientPersistenceAdapter implements PatientRepositoryPort {
     }
 
     private boolean isUuidValid(UUID uuid) {
-        return !UuidHelper.isDefault(uuid) && !UuidHelper.isUuidEmpty(uuid);
+        return UuidHelper.isDefault(uuid) || UuidHelper.isUuidEmpty(uuid);
     }
 
 

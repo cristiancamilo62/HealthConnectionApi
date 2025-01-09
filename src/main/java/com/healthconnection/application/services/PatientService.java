@@ -23,8 +23,12 @@ public class PatientService implements PatientServicePort {
 
 
     @Override
-    public PatientDomain createPatient(PatientDomain patient) {
-        return new PatientDomain();
+    public void createPatient(PatientDomain patient) {
+
+        validationsRuleExecutor.validate(patient);
+
+        patientRepository.save(patient);
+
     }
 
     @Override

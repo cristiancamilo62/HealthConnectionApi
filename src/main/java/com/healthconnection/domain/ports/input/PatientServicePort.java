@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface PatientServicePort {
 
-    PatientDomain createPatient(PatientDomain patient);
+    void createPatient(PatientDomain patient);
 
     Optional<PatientDomain> getPatientById(UUID id);
 

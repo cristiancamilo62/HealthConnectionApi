@@ -1,18 +1,17 @@
-package com.healthconnection.shared.helper;
+package com.healthconnection.infrastructure.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
 @Component
-public class JwtUtil {
+public class JwtService {
 
     private static final String SECRET = "g5&8vR!qZ2#jK1@xP9*wD4zY$L0eM6sT"; // PROPIEAD CAMBIAR A SEGURA
 
