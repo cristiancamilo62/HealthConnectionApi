@@ -47,6 +47,8 @@ public class ValidationsRuleExecutor implements ValidationRule<PatientDomain> {
 
         idPatientRuleValidator.validate(patientDomain.getId());
 
+        patientIdAlreadyExistBusinessRule.validate(patientDomain.getId());
+
         namePatientRuleValidator.validate(patientDomain);
 
         identificationPatientRuleValidator.validate(patientDomain.getIdentification());
@@ -56,8 +58,6 @@ public class ValidationsRuleExecutor implements ValidationRule<PatientDomain> {
         passwordPatientRuleValidator.validate(patientDomain.getPassword());
 
         phoneNumberPatientRuleValidator.validate(patientDomain.getPhoneNumber());
-
-        patientIdAlreadyExistBusinessRule.validate(patientDomain.getId());
 
         patientIdentificationAlreadyExistBusinessRule.validate(patientDomain.getIdentification());
 

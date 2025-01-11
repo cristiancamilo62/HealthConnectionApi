@@ -1,6 +1,7 @@
 package com.healthconnection.domain.ports.input;
 
 
+import com.healthconnection.application.dto.PatientDTO;
 import com.healthconnection.domain.model.patient.PatientDomain;
 
 import java.util.List;
@@ -11,13 +12,12 @@ public interface PatientServicePort {
 
     void createPatient(PatientDomain patient);
 
-    Optional<PatientDomain> getPatientById(UUID id);
+    Optional<PatientDTO> getPatientById(UUID id);
 
-    List<PatientDomain> getAllPatients();
+    List<PatientDTO> getAllPatients();
 
-    PatientDomain updatePatient(PatientDomain patient);
+    void updatePatient(PatientDomain patient);
 
     void deletePatient(UUID id);
 
-    boolean existsById(UUID id);
 }

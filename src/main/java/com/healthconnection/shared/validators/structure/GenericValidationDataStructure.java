@@ -22,7 +22,7 @@ public final class GenericValidationDataStructure {
     public void validateDataNotNullOrEmpty(Object value, String dataName){
         if(TextHelper.isNullOrEmpty((String) value)){
             String userMessage = dataName + MessageCatalog.getContentMessage(MessageCode.M0000004);
-            throw  new EmptyOrNullDataRuleValidatorException(userMessage);
+            throw new EmptyOrNullDataRuleValidatorException(userMessage);
         }
     }
 
